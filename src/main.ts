@@ -16,5 +16,5 @@ import { registerPlugins } from '@/plugins'
 const app = createApp(App)
 
 registerPlugins(app)
-
+app.config.globalProperties.window = window
 app.mount('#app')

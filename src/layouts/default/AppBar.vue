@@ -1,10 +1,8 @@
 <template>
   <v-app-bar flat>
-    <v-app-bar-title>
-      <v-icon icon="mdi-circle-slice-4" />
-
-      Base Preset
-    </v-app-bar-title>
+    <v-spacer/>
+    <span>Specialization Affinity Test - UAB CS</span>
+    <v-spacer/>
   </v-app-bar>
 </template>
 
