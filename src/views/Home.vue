@@ -114,7 +114,7 @@ export default {
   methods: {
     speak(t){
       const utt = new SpeechSynthesisUtterance(t)
-        utt.rate=1.2
+        utt.rate=1.1
         utt.voice=this.voice
         utt.lang='en'
         this.window.speechSynthesis.speak(utt);
