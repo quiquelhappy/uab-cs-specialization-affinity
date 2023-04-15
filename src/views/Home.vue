@@ -14,7 +14,7 @@
   <div class="text-center my-10 py-10" v-else-if="shuffled.length <= 0">
     <v-progress-circular indeterminate size="large" />
   </div>
-  <v-card :style="`margin-bottom:${($refs['vote']?.offsetHeight ?? 0) + 40}px`" v-else-if="voting" class="mt-5">
+  <v-card :style="$vuetify.display.mdAndUp ? `margin-bottom:${($refs['vote']?.offsetHeight ?? 0) + 40}px` : 'margin-bottom:32px'" v-else-if="voting" class="mt-5">
     <v-progress-linear color="primary" :model-value="progress" />
     <v-list-item class="my-3" :title="subjects[id].name">
       <template v-slot:prepend>
@@ -49,8 +49,8 @@
       </v-list-item>
     </v-card>
   </div>
-  <div v-if="voting" ref="vote" style="position:fixed; bottom:30px; width: 100%; left: 0px">
-    <v-container style="max-width: 700px;">
+  <div v-if="voting" ref="vote" :style="$vuetify.display.mdAndUp ? 'position:fixed; bottom:30px; width: 100%; left: 0px' : null">
+    <div style="max-width: 700px;margin:auto">
       <v-card border class="pa-5">
         <p class="text-center mb-5">Based on this information, do you believe you would like to course this subject?</p>
         <v-row>
@@ -73,7 +73,7 @@
           </v-col>
         </v-row>
       </v-card>
-    </v-container>
+    </div>
   </div>
 </template>
 
